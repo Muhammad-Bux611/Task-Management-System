@@ -79,7 +79,7 @@ public class InsertTask extends HttpServlet {
 		  String getData = "from TasksEntity t where  t.title=:Title";
 		  Query fetchData = session.createQuery(getData);
 		  fetchData.setParameter("Title", title);
-//		  fetchData.setParameter("mail", email);
+
 			List<TasksEntity> entities =(List<TasksEntity>) fetchData.list();
 			entity.setUser(user);
 			
@@ -92,7 +92,6 @@ public class InsertTask extends HttpServlet {
 			dateSession.beginTransaction();
 			Query curr_Date = session.createQuery(date_Query);
 		Date date=(Date)curr_Date.uniqueResult();
-//		Date date = Date.valueOf(sys_Date);
 		dateSession.getTransaction().commit();
 			
 		if (user==null) {
