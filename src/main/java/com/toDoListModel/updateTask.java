@@ -33,7 +33,7 @@ public class updateTask extends HttpServlet {
  			HttpSession httpSession = req.getSession();
  			httpSession.setAttribute("result", result);
  			res.sendRedirect("updateTask.jsp?id="+id);
-// 				res.sendRedirect("SeeTask?email="+result.getUser().email);
+ 			
  			}catch (Exception e) {
 				// TODO: handle exception
  				

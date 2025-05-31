@@ -152,15 +152,6 @@ public class InsertTask extends HttpServlet {
 			
 			
 			try {
-//				Session viewSession = sf.openSession();
-//				viewSession.beginTransaction();
-//				Query viewQuery = viewSession.createQuery("from TasksEntity where user.email=:mail");
-//				 viewTasks = viewQuery.list();
-//				 viewHttpSession = req.getSession();
-//				viewHttpSession.setAttribute("view", viewTasks);
-//				res.sendRedirect("viewTasks.jsp");
-//				viewSession.getTransaction().commit();
-				
 				res.sendRedirect("SeeTask?email="+email);
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -191,16 +182,7 @@ public class InsertTask extends HttpServlet {
 		session2.getTransaction().commit();
 		try {
 			
-//			Session checkSession = sf.openSession();
-//			checkSession.beginTransaction();
-//			Query q = checkSession.createQuery("from TasksEntity where user.email=:mail");
-//			q.setParameter("mail", email);
-//			List<TasksEntity> checkList = q.list();
-//		httpSession.setAttribute("view",checkList );
 		httpSession.setAttribute("sys_Date", date);
-//		checkSession.getTransaction().commit();
-//		res.sendRedirect("viewTasks.jsp");
-		
 		res.sendRedirect("SeeTask?email="+email);
 		}catch (Exception e) {
 			// TODO: handle exception

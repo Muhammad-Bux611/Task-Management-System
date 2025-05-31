@@ -60,7 +60,6 @@ public class EditTask extends HttpServlet  {
 				Query q =  s.createQuery("from TasksEntity where id=:id");
 				q.setParameter("id", task.id);
 				
-//				List<TasksEntity> entities = q.list();
 				TasksEntity entities = (TasksEntity)q.uniqueResult();
 				s.getTransaction().commit();
 				if (entities==null) {
@@ -73,10 +72,7 @@ public class EditTask extends HttpServlet  {
 				{
 					HttpSession fetchSession = req.getSession();
 					
-				try {
-//					fetchSession.setAttribute("views", entities);
-//					res.sendRedirect("updateTask.jsp?id="+id);
-					
+				try {	
 					res.sendRedirect("SeeTask?email="+entities.getUser().email);
 					
 					
@@ -112,10 +108,6 @@ public class EditTask extends HttpServlet  {
 				
 			if (i>0) {
 				try {
-					
-//					httpSession.setAttribute("view", tasks);
-				 
-//					res.sendRedirect("viewTasks.jsp");
 					
 					res.sendRedirect("SeeTask?email="+task.getUser().email);
 				}catch (Exception e) {

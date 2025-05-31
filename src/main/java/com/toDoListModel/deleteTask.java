@@ -17,9 +17,6 @@ public class deleteTask extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) {
 
-//		HttpSession httpSession = req.getSession();
-//	String email	=(String)httpSession.getAttribute("mail");
-		
 		String id = req.getParameter("id");
 		
 			Configuration cfg = new Configuration().addAnnotatedClass(User.class).addAnnotatedClass(TasksEntity.class).configure();
@@ -43,7 +40,6 @@ public class deleteTask extends HttpServlet {
 				try {
 					res.sendRedirect("SeeTask?email="+task.getUser().email);
 					
-//					res.sendRedirect("viewTasks.jsp");
 				}catch (Exception e) {
 					// TODO: handle exception
 				}
